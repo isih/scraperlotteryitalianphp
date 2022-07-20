@@ -106,7 +106,7 @@ foreach($h3s as $h3){
         $text_title = $word12;
     }
     else{
-        $tablevincicasa .= "Term Not Recognized!";
+        $content .= "Term Not Recognized!";
     }
     
     //Assigning the name in the array
@@ -121,7 +121,7 @@ foreach($h3s as $h3){
     //Getting all the names in one array
     foreach($h3_array as $v){
         $final_h3[] = $v;
-        //$tablevincicasa .= $v;
+        //$content .= $v;
     }
 
     //Getting all the dates in one array
@@ -173,12 +173,12 @@ $currentDay = date('D');
 if(date('D') === 'Tue' && date('G') >= 21 && date('G') < 24 || date('D') === 'Wed' && date('G') >= 1 && date('G') < 21){
 
     require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-    $postType = 'post'; // set to post or page
+    //$postType = 'post'; // set to post or page
     //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-    $categoryID = '1'; // set to category id.
-    $userID = 'test'; // set to user id
-    $leadTitle = "Estrazioni Lotto, SuperEnalotto e 10eLotto di oggi " .date("n/d/Y");
-    $postStatus = 'publish';  // set to future, draft, or publish
+    //$categoryID = '1'; // set to category id.
+    //$userID = 'test'; // set to user id
+    //$leadTitle = "Estrazioni Lotto, SuperEnalotto e 10eLotto di oggi " .date("n/d/Y");
+    //$postStatus = 'publish';  // set to future, draft, or publish
     
 
     //Assigning Separate arrays for each table.
@@ -225,87 +225,87 @@ if(date('D') === 'Tue' && date('G') >= 21 && date('G') < 24 || date('D') === 'We
     $chuk_array = array_chunk($tab0, (ceil(count($tab0)/11)));
     //print_r($chuk_array);
 
-    $tablevincicasa = "<h2><b>Estrazioni del Lotto e del Superenalotto di oggi " .date("n/d/Y"). " in diretta: chi vincerà</b></h2>";
-    $tablevincicasa .= "<p>Aumenta l'attesa per l'estrazione di oggi, " .date('n/d/Y')."</p>";
-    $tablevincicasa .= "<p>In occasione di questa estrazione qualche fortunato riuscirà a portarsi a casa il ricco premio?
+    $content = "<h2><b>Estrazioni del Lotto e del Superenalotto di oggi " .date("n/d/Y"). " in diretta: chi vincerà</b></h2>";
+    $content .= "<p>Aumenta l'attesa per l'estrazione di oggi, " .date('n/d/Y')."</p>";
+    $content .= "<p>In occasione di questa estrazione qualche fortunato riuscirà a portarsi a casa il ricco premio?
     Ricordiamo come la più alta vincita di tutti i tempi sia stata di 209.106.441,54 € e sia stata ralizzata a Lodi il 13 agosto 2019: riuscirà questa volta il montepremi a scalare la classifica dei premi più ricchi della storia (ricordiamo come il SuperEnalotto detenga il primato della più alta vincita mai aggiudicata a una sola persona in Europa).
     In attesa di scoprirlo a partire dalle 20, pubblicheremo di seguito i numeri vincenti dell’estrazione odierna - che avviene come sempre presso la sede di Piazza Mastai a Roma.</p>";
-    $tablevincicasa .= "<h2>Estrazione Lotto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<p>Di seguito i proponiamo inoltre, sempre aggiornati in diretta, i numeri del lotto.</p>";
+    $content .= "<h2>Estrazione Lotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<p>Di seguito i proponiamo inoltre, sempre aggiornati in diretta, i numeri del lotto.</p>";
 
     //For Del Lotto
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>Lotto</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>Lotto</caption>";
+    $content .= "<tr>";
     foreach($chuk_array[0] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
         
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[1] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[2] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[3] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[4] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[5] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[6] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[7] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[8] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[9] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[10] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+	$content .= "<br>";
     
-    $tablevincicasa .= "<h2>Estrazioni Superenalotto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "<h2>Estrazioni Superenalotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
     
     //SuperEnalotto
     unset($tab1[0]);
@@ -318,31 +318,31 @@ if(date('D') === 'Tue' && date('G') >= 21 && date('G') < 24 || date('D') === 'We
     //print_r($new_array1);
     $new_array2 = array_slice($tab1, 9, 2);
     //print_r($new_array2);
-    $tablevincicasa .= "<table>";
-	$tablevincicasa .= "<caption>Superenalotto</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+	$content .= "<caption>Superenalotto</caption>";
+    $content .= "<tr>";
     foreach($new_array as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array1 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array2 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-	$tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";
+    $content .= "</tr>";
+	$content .= "</table>";
+	$content .= "<br>";
 
-    $tablevincicasa .= "<h2>Estrazione 10eLotto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<p>Infine, vi proponiamo anche i numeri del 10eLotto, nella versone collegata all'estrazone del Lotto.</p>";
-    $tablevincicasa .= "<br>";
+    $content .= "<h2>Estrazione 10eLotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<p>Infine, vi proponiamo anche i numeri del 10eLotto, nella versone collegata all'estrazone del Lotto.</p>";
+    $content .= "<br>";
 
         //For 10 e Lotto
         unset($tab2[0]);
@@ -361,83 +361,104 @@ if(date('D') === 'Tue' && date('G') >= 21 && date('G') < 24 || date('D') === 'We
         //print_r($new_array4);
         $new_array5 = array_slice($tab2, 26, 3);
         //print_r($new_array5);
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<caption>10 e Lotto</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<caption>10 e Lotto</caption>";
+        $content .= "<tr>";
         foreach($new_array as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
     
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array1 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
     
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array2 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array3 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array4 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array5 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>";
+        $content .= "</tr>";
+        $content .= "</table>";
+        $content .= "<br>";
 
         //10 e Lotto EXTRA
         unset($tab3[0]);
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<caption>10 e Lotto EXTRA</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<caption>10 e Lotto EXTRA</caption>";
+        $content .= "<tr>";
         foreach($tab3 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>";
+        $content .= "</tr>";
+        $content .= "</table>";
+        $content .= "<br>";
 
-        $tablevincicasa .= "Per chi non conoscesse il funzionamento, ci rifacciamo al regolamento riportato da Wikipedia: 'la combinazione vincente viene determinata dai primi due numeri delle ruote del Lotto, esclusa la ruota Nazionale; in caso di numeri ripetuti si partirà dalla terza colonna iniziando dalla ruota di Bari e proseguendo in ordine alfabetico.'";
-        $leadContent = $tablevincicasa;
+        $content .= "Per chi non conoscesse il funzionamento, ci rifacciamo al regolamento riportato da Wikipedia: 'la combinazione vincente viene determinata dai primi due numeri delle ruote del Lotto, esclusa la ruota Nazionale; in caso di numeri ripetuti si partirà dalla terza colonna iniziando dalla ruota di Bari e proseguendo in ordine alfabetico.'";
+        $leadContent = $content;
 
-        $new_post = array(
-            'post_title' => $leadTitle,
+        $query = new WP_Query( array( 
+            'numberposts' => 1,
+            'offset' => 0,
+            //'category' => $cat->cat_ID,
+            'orderby' => 'ID',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'tag' => 'Lotto7' ) );
+            //$query->the_post();
+        if($query->have_posts()){
+            while ( $query->have_posts() ) {
+                $query->the_post(); 
+                //$recent['title'] = get_the_title();
+                $recentid = get_the_ID();
+                //wp_reset_postdata();
+            }
+        }
+
+        $data = array(
+            'ID' => $recentid,
+            //'post_title' => $leadTitle,
             'post_content' => $leadContent,
-            'post_status' => $postStatus,
+            //'post_status' => $postStatus,
             //'post_date' => $timeStamp,
-            'post_author' => $userID,
-            'post_type' => $postType,
-            'post_category' => array($categoryID),
-            //'page_template' => 'show.php'
+            //'post_author' => $userID,
+            //'post_type' => $postType,
+            //'post_category' => array($categoryID),
+            //'page_template' => 'show.php',
+            //'tags_input' => array('Lotto, Superenalotto, 10elotto')
         );
-
-        $post_id = wp_insert_post($new_post);
-        set_post_thumbnail($post_id, 101);
+        wp_update_post($data);
+        //$post_id = wp_insert_post($new_post);
+        //set_post_thumbnail($post_id, 101);
 
     if(date('D') === 'Tue' && date('G') >= 21 && date('G') < 24 || date('D') === 'Wed' && date('G') >= 1 && date('G') < 21){
         require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-        $postType = 'post'; // set to post or page
+        //$postType = 'post'; // set to post or page
         //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-        $categoryID = '1'; // set to category id.
-        $userID = 'test'; // set to user id
-        $leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
-        $postStatus = 'publish';  // set to future, draft, or publish
+        //$categoryID = '1'; // set to category id.
+        //$userID = 'test'; // set to user id
+        //$leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
+        //$postStatus = 'publish';  // set to future, draft, or publish
         
     
         //Assigning Separate arrays for each table.
@@ -458,116 +479,137 @@ if(date('D') === 'Tue' && date('G') >= 21 && date('G') < 24 || date('D') === 'We
     
         $tab8 = $rowData[8];
         
-        $tablevincicasa = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
+        $content = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
         Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.
         Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
-        $tablevincicasa .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
-        $tablevincicasa .= "<br>";
+        $content .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
+        $content .= "<br>";
         //Table A of VinciCasa
         $chuk_array5 = array_chunk($tab6, (ceil(count($tab6)/5)));
         //print_r($chuk_array5);
         unset($tab5[0]);
-        $tablevincicasa .= "<table>";
-	    $tablevincicasa .= "<caption>VinciCasa</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+	    $content .= "<caption>VinciCasa</caption>";
+        $content .= "<tr>";
         foreach ($tab5 as $row) {
-            $tablevincicasa .= "<td>$row </td>";
+            $content .= "<td>$row </td>";
         }
-        $tablevincicasa .= "</tr>";
-	    $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>";    
+        $content .= "</tr>";
+	    $content .= "</table>";
+	    $content .= "<br>";    
 
 	    //Table B
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<tr>";
         foreach($chuk_array5[0] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
         
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[1] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[2] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[3] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[4] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>";
+        $content .= "</tr>";
+        $content .= "</table>";
+	    $content .= "<br>";
         
-        $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
+        $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
         Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
-        $tablevincicasa .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
-        $tablevincicasa .= "<br>";
+        $content .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
+        $content .= "<br>";
 
         //Table for MillionDay
-	    $tablevincicasa .= "<table>";
-	    $tablevincicasa .= "<caption>MillionDay</caption>";
-        $tablevincicasa .= "<tr>";
+	    $content .= "<table>";
+	    $content .= "<caption>MillionDay</caption>";
+        $content .= "<tr>";
 	    foreach ($tab7 as $row) {
             foreach (array($row) as $column) {
-                $tablevincicasa .= "<td>$column </td>";
+                $content .= "<td>$column </td>";
             }
         }   
-        $tablevincicasa .= "</tr>"; 
-        $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>"; 
+        $content .= "</tr>"; 
+        $content .= "</table>";
+	    $content .= "<br>"; 
 
         
 	    //Table for MillionDay EXTRA
-	    $tablevincicasa .= "<table>";
-	    $tablevincicasa .= "<caption>MillionDay EXTRA</caption>";
-        $tablevincicasa .= "<tr>";
+	    $content .= "<table>";
+	    $content .= "<caption>MillionDay EXTRA</caption>";
+        $content .= "<tr>";
 	    foreach ($tab8 as $row) {
 		    foreach (array($row) as $column) {
-			    $tablevincicasa .= "<td>$column </td>";
+			    $content .= "<td>$column </td>";
 		    }
 	    }   
-        $tablevincicasa .= "</tr>"; 
-	    $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>";
+        $content .= "</tr>"; 
+	    $content .= "</table>";
+	    $content .= "<br>";
 
-        $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
+        $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
         Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.
         Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.
         A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
-        $tablevincicasa .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
-        $tablevincicasa .= "Ricordiamo come le possibilità di vincita siano decisamente basse.
+        $content .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
+        $content .= "Ricordiamo come le possibilità di vincita siano decisamente basse.
         Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.
         Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).
         Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.";
 
-        $leadContent = $tablevincicasa;
+        $leadContent = $content;
 
-        $new_post = array(
-            'post_title' => $leadTitle,
+        $query = new WP_Query( array( 
+            'numberposts' => 1,
+            'offset' => 0,
+            //'category' => $cat->cat_ID,
+            'orderby' => 'ID',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'tag' => 'VinciCasa2' ) );
+            //$query->the_post();
+        if($query->have_posts()){
+            while ( $query->have_posts() ) {
+                $query->the_post(); 
+                //$recent['title'] = get_the_title();
+                $recentid = get_the_ID();
+                //wp_reset_postdata();
+            }
+        }
+
+        $data = array(
+            'ID' => $recentid,
+            //'post_title' => $leadTitle,
             'post_content' => $leadContent,
-            'post_status' => $postStatus,
+            //'post_status' => $postStatus,
             //'post_date' => $timeStamp,
-            'post_author' => $userID,
-            'post_type' => $postType,
-            'post_category' => array($categoryID),
-            //'page_template' => 'show.php'
+            //'post_author' => $userID,
+            //'post_type' => $postType,
+            //'post_category' => array($categoryID),
+            //'page_template' => 'show.php',
+            //'tags_input' => array('VinciCasa, MillionDAY')
         );
-
-        $post_id = wp_insert_post($new_post);
-        set_post_thumbnail($post_id, 101);
+        wp_update_post($data);
+        //$post_id = wp_insert_post($new_post);
+        //set_post_thumbnail($post_id, 101);
     }
 
 
@@ -659,12 +701,12 @@ if(date('D') === 'Tue' && date('G') >= 21 && date('G') < 24 || date('D') === 'We
 if(date('D') === 'Wed' && date('G') >= 21 && date('G') < 24 || date('D') === 'Thu' && date('G') >= 1 && date('G') < 21){
 
     require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-    $postType = 'post'; // set to post or page
+    //$postType = 'post'; // set to post or page
     //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-    $categoryID = '1'; // set to category id.
-    $userID = 'test'; // set to user id
-    $leadTitle = "Estrazioni VinciCasa, MillionDay e SiVinceTutto di oggi " .date("n/d/Y");
-    $postStatus = 'publish';  // set to future, draft, or publish
+    //$categoryID = '1'; // set to category id.
+    //$userID = 'test'; // set to user id
+    //$leadTitle = "Estrazioni VinciCasa, MillionDay e SiVinceTutto di oggi " .date("n/d/Y");
+    //$postStatus = 'publish';  // set to future, draft, or publish
     
 
     //Assigning Separate arrays for each table.
@@ -693,184 +735,205 @@ if(date('D') === 'Wed' && date('G') >= 21 && date('G') < 24 || date('D') === 'Th
     $tab5 = $rowData[5];
     //print_r($tab5);
 
-    $tablevincicasa = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
+    $content = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
     Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.
     Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
-    $tablevincicasa .= "<h2>Estrazioni SiVinceTutto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "<h2>Estrazioni SiVinceTutto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
 
     //Table A of SiVinceTutto
     unset($tab0[0]);
     $chuk_array = array_chunk($tab1, (ceil(count($tab1)/7)));
-    $tablevincicasa .= "<table>";
-	$tablevincicasa .= "<caption>SiVinceTutto</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+	$content .= "<caption>SiVinceTutto</caption>";
+    $content .= "<tr>";
     foreach ($tab0 as $row) {
         foreach (array($row) as $column) {
-            $tablevincicasa .= "<td>$column </td>";
+            $content .= "<td>$column </td>";
         }
     }
-    $tablevincicasa .= "</tr>";
-	$tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";    
+    $content .= "</tr>";
+	$content .= "</table>";
+	$content .= "<br>";    
 
 	//Table B
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<tr>";
     foreach($chuk_array[0] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
         
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[1] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[2] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[3] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[4] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[5] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[6] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+	$content .= "<br>";
 
-    $tablevincicasa .= "Di seguito i numeri vincenti dell'estrazione odierna di SiVinceTutto.";
+    $content .= "Di seguito i numeri vincenti dell'estrazione odierna di SiVinceTutto.";
 
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
+    $content .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
     //Table A of VinciCasa
     unset($tab0[0]);
     $chuk_array1 = array_chunk($tab3, (ceil(count($tab3)/5)));
-    $tablevincicasa .= "<table>";
-	$tablevincicasa .= "<caption>VinciCasa</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+	$content .= "<caption>VinciCasa</caption>";
+    $content .= "<tr>";
     foreach ($tab2 as $row) {
         foreach (array($row) as $column) {
             if(strlen($column) !== 25){
-                $tablevincicasa .= "<td>$column </td>";
+                $content .= "<td>$column </td>";
             }
         }
     }
-    $tablevincicasa .= "</tr>";
-	$tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";    
+    $content .= "</tr>";
+	$content .= "</table>";
+	$content .= "<br>";    
 
 	//Table B
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<tr>";
     foreach($chuk_array1[0] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
         
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array1[1] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array1[2] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array1[3] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array1[4] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
 
-    $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
+    $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
     Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "<br>";
+    $content .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
 
     //For MillionDay
     unset($tab4[0]);
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>MillionDay</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>MillionDay</caption>";
+    $content .= "<tr>";
     foreach($tab4 as $rows){
-        $tablevincicasa .= "<td>$rows</td>";
+        $content .= "<td>$rows</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
 
     //For MillionDay Extra
     unset($tab5[0]);
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>MillionDay EXTRA</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>MillionDay EXTRA</caption>";
+    $content .= "<tr>";
     foreach($tab5 as $rows){
-        $tablevincicasa .= "<td>$rows</td>";
+        $content .= "<td>$rows</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
 
-    $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
+    $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
     Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.
     Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.
     A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
-    $tablevincicasa .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
+    $content .= "<br>";
+    $content .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
+    $content .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
     Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.
     Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).
     Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.</p>";
-    $leadContent = $tablevincicasa;
+    $leadContent = $content;
+
+    $query = new WP_Query( array( 
+        'numberposts' => 1,
+        'offset' => 0,
+        //'category' => $cat->cat_ID,
+        'orderby' => 'ID',
+        'order' => 'DESC',
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'tag' => 'VinciCasa3' ) );
+        //$query->the_post();
+    if($query->have_posts()){
+        while ( $query->have_posts() ) {
+            $query->the_post(); 
+            //$recent['title'] = get_the_title();
+            $recentid = get_the_ID();
+            //wp_reset_postdata();
+        }
+    }
 
 
-    $new_post = array(
-        'post_title' => $leadTitle,
+    $data = array(
+        'ID' => $recentid,
+        //'post_title' => $leadTitle,
         'post_content' => $leadContent,
-        'post_status' => $postStatus,
+        //'post_status' => $postStatus,
         //'post_date' => $timeStamp,
-        'post_author' => $userID,
-        'post_type' => $postType,
-        'post_category' => array($categoryID),
-        //'page_template' => 'show.php'
+        //'post_author' => $userID,
+        //'post_type' => $postType,
+        //'post_category' => array($categoryID),
+        //'page_template' => 'show.php',
+        //'tags_input' => array('SiVinceTutto, VinciCasa, MillionDay')
     );
-
-    $post_id = wp_insert_post($new_post);
-    set_post_thumbnail($post_id, 101);
+    wp_update_post($data);
+    //$post_id = wp_insert_post($new_post);
+    //set_post_thumbnail($post_id, 101);
 
 
     /*$outerArray0 = array();
@@ -906,12 +969,12 @@ if(date('D') === 'Wed' && date('G') >= 21 && date('G') < 24 || date('D') === 'Th
 if(date('D') === 'Thu' && date('G') >= 21 && date('G') < 24 || date('D') === 'Fri' && date('G') >= 1 && date('G') < 21){
 
     require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-    $postType = 'post'; // set to post or page
+    //$postType = 'post'; // set to post or page
     //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-    $categoryID = '1'; // set to category id.
-    $userID = 'test'; // set to user id
-    $leadTitle = "Estrazioni Lotto, SuperEnalotto e 10eLotto di oggi " .date("n/d/Y");
-    $postStatus = 'publish';  // set to future, draft, or publish
+    //$categoryID = '1'; // set to category id.
+    //$userID = 'test'; // set to user id
+    //$leadTitle = "Estrazioni Lotto, SuperEnalotto e 10eLotto di oggi " .date("n/d/Y");
+    //$postStatus = 'publish';  // set to future, draft, or publish
     
 
     //Assigning Separate arrays for each table.
@@ -937,47 +1000,47 @@ if(date('D') === 'Thu' && date('G') >= 21 && date('G') < 24 || date('D') === 'Fr
     //print_r($tab4);
 
     
-    $tablevincicasa = "<p>In occasione di questa estrazione qualche fortunato riuscirà a portarsi a casa il ricco premio?
+    $content = "<p>In occasione di questa estrazione qualche fortunato riuscirà a portarsi a casa il ricco premio?
     Ricordiamo come la più alta vincita di tutti i tempi sia stata di 209.106.441,54 € e sia stata ralizzata a Lodi il 13 agosto 2019: riuscirà questa volta il montepremi a scalare la classifica dei premi più ricchi della storia (ricordiamo come il SuperEnalotto detenga il primato della più alta vincita mai aggiudicata a una sola persona in Europa).
     In attesa di scoprirlo a partire dalle 20, pubblicheremo di seguito i numeri vincenti dell’estrazione odierna - che avviene come sempre presso la sede di Piazza Mastai a Roma.</p>";
-    $tablevincicasa .= "<h2>Estrazione Lotto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<p>Di seguito i proponiamo inoltre, sempre aggiornati in diretta, i numeri del lotto.</p>";
+    $content .= "<h2>Estrazione Lotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<p>Di seguito i proponiamo inoltre, sempre aggiornati in diretta, i numeri del lotto.</p>";
 
     //For Del Lotto
     unset($tab0[0]);
     unset($tab0[1]);
     $chuk_array = array_chunk($tab0, (ceil(count($tab0)/11)));
     //print_r($chuk_array);
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>Del Lotto</caption>";
+    $content .= "<table>";
+    $content .= "<caption>Del Lotto</caption>";
     foreach($chuk_array as $bits){
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($bits as $rows){
-            $tablevincicasa .= "<td>$rows</td>";
+            $content .= "<td>$rows</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
     }
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazioni Superenalotto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "</table>";
+    $content .= "<br>";
+    $content .= "<h2>Estrazioni Superenalotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
 
     //For Superenalotto
     unset($tab1[0]);
     //unset($tab1[1]);
     //print_r($chuk_array);
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>Superenalotto</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>Superenalotto</caption>";
+    $content .= "<tr>";
     foreach($tab1 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazione 10eLotto di oggi DATE</h2>";
-    $tablevincicasa .= "<p>Infine, vi proponiamo anche i numeri del 10eLotto, nella versone collegata all'estrazone del Lotto.</p>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
+    $content .= "<h2>Estrazione 10eLotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<p>Infine, vi proponiamo anche i numeri del 10eLotto, nella versone collegata all'estrazone del Lotto.</p>";
+    $content .= "<br>";
 
 
     //For 10 e Lotto
@@ -997,84 +1060,108 @@ if(date('D') === 'Thu' && date('G') >= 21 && date('G') < 24 || date('D') === 'Fr
     //print_r($new_array4);
     $new_array5 = array_slice($tab2, 26, 3);
     //print_r($new_array5);
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>10 e Lotto</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>10 e Lotto</caption>";
+    $content .= "<tr>";
     foreach($new_array as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array1 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array2 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array3 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array4 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array5 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
 
 
     //10 e Lotto EXTRA
     unset($tab3[0]);
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>10 e Lotto EXTRA</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>10 e Lotto EXTRA</caption>";
+    $content .= "<tr>";
     foreach($tab3 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<p>Per chi non conoscesse il funzionamento, ci rifacciamo al regolamento riportato da Wikipedia: 'la combinazione vincente viene determinata dai primi due numeri delle ruote del Lotto, esclusa la ruota Nazionale; in caso di numeri ripetuti si partirà dalla terza colonna iniziando dalla ruota di Bari e proseguendo in ordine alfabetico'</p>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
+    $content .= "<p>Per chi non conoscesse il funzionamento, ci rifacciamo al regolamento riportato da Wikipedia: 'la combinazione vincente viene determinata dai primi due numeri delle ruote del Lotto, esclusa la ruota Nazionale; in caso di numeri ripetuti si partirà dalla terza colonna iniziando dalla ruota di Bari e proseguendo in ordine alfabetico'</p>";
 
-    $leadContent = $tablevincicasa;
+    $leadContent = $content;
 
-    $new_post = array(
-        'post_title' => $leadTitle,
+    
+    //$query = new WP_Query( array( 'tag' => 'Lotto' ) );
+    $query = new WP_Query( array( 
+        'numberposts' => 1,
+        'offset' => 0,
+        //'category' => $cat->cat_ID,
+        'orderby' => 'ID',
+        'order' => 'DESC',
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'tag' => 'Lotto1' ) );
+        //$query->the_post();
+    if($query->have_posts()){
+        while ( $query->have_posts() ) {
+            $query->the_post(); 
+            //$recent['title'] = get_the_title();
+            $recentid = get_the_ID();
+            //wp_reset_postdata();
+        }
+    }
+
+    $data = array(
+        'ID' => $recentid,
+        //'post_title' => $leadTitle,
         'post_content' => $leadContent,
-        'post_status' => $postStatus,
+        //'post_status' => $postStatus,
         //'post_date' => $timeStamp,
-        'post_author' => $userID,
-        'post_type' => $postType,
-        'post_category' => array($categoryID),
-        //'page_template' => 'show.php'
+       // 'post_author' => $userID,
+        //'post_type' => $postType,
+        //'post_category' => array($categoryID),
+        //'page_template' => 'show.php',
+        //'tags_input' => array('Lotto, Superenalotto, 10elotto')
     );
+    wp_update_post($data);
 
-    $post_id = wp_insert_post($new_post);
-    set_post_thumbnail($post_id, 101);
+    //$post_id = wp_insert_post($new_post);
+    //set_post_thumbnail($post_id, 101);
 
     if(date('D') === 'Thu' && date('G') >= 21 && date('G') < 24 || date('D') === 'Fri' && date('G') >= 1 && date('G') < 21){
         require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-        $postType = 'post'; // set to post or page
+        //$postType = 'post'; // set to post or page
         //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-        $categoryID = '1'; // set to category id.
-        $userID = 'test'; // set to user id
-        $leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
-        $postStatus = 'publish';  // set to future, draft, or publish
+        //$categoryID = '1'; // set to category id.
+        //$userID = 'test'; // set to user id
+        //$leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
+        //$postStatus = 'publish';  // set to future, draft, or publish
 
 
         $tab5 = array();
@@ -1094,119 +1181,140 @@ if(date('D') === 'Thu' && date('G') >= 21 && date('G') < 24 || date('D') === 'Fr
         $tab8 = $rowData[8];
         //print_r($tab8);
 
-        $tablevincicasa = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
+        $content = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
         Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.
         Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
-        $tablevincicasa .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
-        $tablevincicasa .= "<br>";
+        $content .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
+        $content .= "<br>";
 
         //Table A of VinciCasa
         $chuk_array5 = array_chunk($tab6, (ceil(count($tab6)/5)));
         //print_r($chuk_array5);
         unset($tab5[0]);
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<caption>VinciCasa</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<caption>VinciCasa</caption>";
+        $content .= "<tr>";
         foreach ($tab5 as $row) {
-            $tablevincicasa .= "<td>$row </td>";
+            $content .= "<td>$row </td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>";    
+        $content .= "</tr>";
+        $content .= "</table>";
+        $content .= "<br>";    
 
         //Table B
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<tr>";
         foreach($chuk_array5[0] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
             
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[1] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[2] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[3] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array5[4] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>";
-        $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
+        $content .= "</tr>";
+        $content .= "</table>";
+        $content .= "<br>";
+        $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
         Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
-        $tablevincicasa .= "<br>";
-        $tablevincicasa .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
-        $tablevincicasa .= "<br>";
+        $content .= "<br>";
+        $content .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
+        $content .= "<br>";
 
 
         //Table for MillionDay
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<caption>MillionDay</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<caption>MillionDay</caption>";
+        $content .= "<tr>";
         foreach ($tab7 as $row) {
             foreach (array($row) as $column) {
-                $tablevincicasa .= "<td>$column </td>";
+                $content .= "<td>$column </td>";
             }
         }   
-        $tablevincicasa .= "</tr>"; 
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>"; 
+        $content .= "</tr>"; 
+        $content .= "</table>";
+        $content .= "<br>"; 
 
 
         //Table for MillionDay EXTRA
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<caption>MillionDay EXTRA</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<caption>MillionDay EXTRA</caption>";
+        $content .= "<tr>";
         foreach ($tab8 as $row) {
             foreach (array($row) as $column) {
-                $tablevincicasa .= "<td>$column </td>";
+                $content .= "<td>$column </td>";
             }
         }   
-        $tablevincicasa .= "</tr>"; 
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>";
+        $content .= "</tr>"; 
+        $content .= "</table>";
+        $content .= "<br>";
 
-        $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
+        $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
         Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.
         Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.
         A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
-        $tablevincicasa .= "<br>";
-        $tablevincicasa .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
-        $tablevincicasa .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
+        $content .= "<br>";
+        $content .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
+        $content .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
         Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.
         Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).
         Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.</p>";
-        $leadContent = $tablevincicasa;
-
+        $leadContent = $content;
+        //$query = new WP_Query( array( 'tag' => 'VinciCasa' ) );
         
-        $new_post = array(
-            'post_title' => $leadTitle,
+        $query = new WP_Query( array( 
+            'numberposts' => 1,
+            'offset' => 0,
+            //'category' => $cat->cat_ID,
+            'orderby' => 'ID',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'tag' => 'MillionDay' ) );
+            //$query->the_post();
+        if($query->have_posts()){
+            while ( $query->have_posts() ) {
+                $query->the_post(); 
+                //$recent['title'] = get_the_title();
+                $recentid = get_the_ID();
+                //wp_reset_postdata();
+            }
+        }
+    
+        $data = array(
+            'ID' => $recentid,
+            //'post_title' => $leadTitle,
             'post_content' => $leadContent,
-            'post_status' => $postStatus,
+            //'post_status' => $postStatus,
             //'post_date' => $timeStamp,
-            'post_author' => $userID,
-            'post_type' => $postType,
-            'post_category' => array($categoryID),
-            //'page_template' => 'show.php'
+           // 'post_author' => $userID,
+            //'post_type' => $postType,
+            //'post_category' => array($categoryID),
+            //'page_template' => 'show.php',
+            //'tags_input' => array('Lotto, Superenalotto, 10elotto')
         );
-
-        $post_id = wp_insert_post($new_post);
-        set_post_thumbnail($post_id, 101);
+        wp_update_post($data);
+        //$post_id = wp_insert_post($new_post);
+        //set_post_thumbnail($post_id, 101);
     }
 
     /*$outerArray0 = array();
@@ -1296,12 +1404,12 @@ if(date('D') === 'Thu' && date('G') >= 21 && date('G') < 24 || date('D') === 'Fr
 if(date('D') == "Fri" && date('G') >= 21 && date('G') < 24 || date('D') == "Sat" && date('G') >= 1 && date('G') < 21){
  
     require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-    $postType = 'post'; // set to post or page
+    //$postType = 'post'; // set to post or page
     //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-    $categoryID = '1'; // set to category id.
-    $userID = 'test'; // set to user id
-    $leadTitle = "Estrazioni VinciCasa, MillionDay e EuroJackpot di oggi " .date("n/d/Y");
-    $postStatus = 'publish';  // set to future, draft, or publish
+    //$categoryID = '1'; // set to category id.
+    //$userID = 'test'; // set to user id
+    //$leadTitle = "Estrazioni VinciCasa, MillionDay e EuroJackpot di oggi " .date("n/d/Y");
+    //$postStatus = 'publish';  // set to future, draft, or publish
 
 
     //Assigning Separate arrays for each table.
@@ -1326,131 +1434,152 @@ if(date('D') == "Fri" && date('G') >= 21 && date('G') < 24 || date('D') == "Sat"
     $tab4 = $rowData[4];
     //print_r($tab4);
     
-    $tablevincicasa = "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content = "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
 
     //For EuroJackpot
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>EuroJackpot</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>EuroJackpot</caption>";
+    $content .= "<tr>";
     foreach($tab0 as $rows){
-        $tablevincicasa .= "<td>$rows</td>";
+        $content .= "<td>$rows</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
 
-    $tablevincicasa .= "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
+    $content .= "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
     Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.
     Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
-    $tablevincicasa .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
 
     //Table A of VinciCasa
     $chuk_array = array_chunk($tab2, (ceil(count($tab2)/5)));
     //print_r($chuk_array5);
     unset($tab1[0]);
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>VinciCasa</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>VinciCasa</caption>";
+    $content .= "<tr>";
     foreach ($tab1 as $row) {
-        $tablevincicasa .= "<td>$row </td>";
+        $content .= "<td>$row </td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";    
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";    
 
     //Table B
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<tr>";
     foreach($chuk_array[0] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
         
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[1] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[2] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[3] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[4] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+    $content .= "<br>";
 
-    $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
+    $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
     Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "<br>";
+    $content .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
 
     //Table for MillionDay
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>MillionDay</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>MillionDay</caption>";
+    $content .= "<tr>";
     foreach ($tab3 as $row) {
         foreach (array($row) as $column) {
-            $tablevincicasa .= "<td>$column </td>";
+            $content .= "<td>$column </td>";
         }
     }   
-    $tablevincicasa .= "</tr>"; 
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>"; 
+    $content .= "</tr>"; 
+    $content .= "</table>";
+    $content .= "<br>"; 
 
 
     //Table for MillionDay EXTRA
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>MillionDay EXTRA</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>MillionDay EXTRA</caption>";
+    $content .= "<tr>";
     foreach ($tab4 as $row) {
         foreach (array($row) as $column) {
-            $tablevincicasa .= "<td>$column </td>";
+            $content .= "<td>$column </td>";
         }
     }   
-    $tablevincicasa .= "</tr>"; 
-    $tablevincicasa .= "</table>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
+    $content .= "</tr>"; 
+    $content .= "</table>";
+    $content .= "<br>";
+    $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
     Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.
     Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.
     A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
-    $tablevincicasa .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
+    $content .= "<br>";
+    $content .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
+    $content .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
     Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.
     Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).
     Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.</p>";
-    $leadContent = $tablevincicasa;
-    
-    $new_post = array(
-        'post_title' => $leadTitle,
-        'post_content' => $leadContent,
-        'post_status' => $postStatus,
-        //'post_date' => $timeStamp,
-        'post_author' => $userID,
-        'post_type' => $postType,
-        'post_category' => array($categoryID),
-        //'page_template' => 'show.php'
-    );
+    $leadContent = $content;
 
-    $post_id = wp_insert_post($new_post);
-    set_post_thumbnail($post_id, 101);
+    $query = new WP_Query( array( 
+        'numberposts' => 1,
+        'offset' => 0,
+        //'category' => $cat->cat_ID,
+        'orderby' => 'ID',
+        'order' => 'DESC',
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'tag' => 'VinciCasa4' ) );
+        //$query->the_post();
+    if($query->have_posts()){
+        while ( $query->have_posts() ) {
+            $query->the_post(); 
+            //$recent['title'] = get_the_title();
+            $recentid = get_the_ID();
+            //wp_reset_postdata();
+        }
+    }
+    
+    $data = array(
+        'ID' => $recentid,
+        //'post_title' => $leadTitle,
+        'post_content' => $leadContent,
+        //'post_status' => $postStatus,
+        //'post_date' => $timeStamp,
+        //'post_author' => $userID,
+        //'post_type' => $postType,
+        //'post_category' => array($categoryID),
+        //'page_template' => 'show.php',
+        //'tags_input' => array('EuroJackpot, VinciCasa, MillionDay')
+    );
+    wp_update_post($data);
+    //$post_id = wp_insert_post($new_post);
+    //set_post_thumbnail($post_id, 101);
 
 
 
@@ -1462,12 +1591,12 @@ if(date('D') == "Fri" && date('G') >= 21 && date('G') < 24 || date('D') == "Sat"
 if(date('D') == "Sat" && date('G') >= 21 && date('G') < 24 || date('D') == "Sun" && date('G') >= 1 && date('G') < 21){
 
     require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-    $postType = 'post'; // set to post or page
+    //$postType = 'post'; // set to post or page
     //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-    $categoryID = '1'; // set to category id.
-    $userID = 'test'; // set to user id
-    $leadTitle = "Estrazioni Lotto, SuperEnalotto e 10eLotto di oggi " .date("n/d/Y");
-    $postStatus = 'publish';  // set to future, draft, or publish
+    //$categoryID = '1'; // set to category id.
+    //$userID = 'test'; // set to user id
+    //$leadTitle = "Estrazioni Lotto, SuperEnalotto e 10eLotto di oggi " .date("n/d/Y");
+    //$postStatus = 'publish';  // set to future, draft, or publish
 
 
     //Assigning Separate arrays for each table.
@@ -1501,86 +1630,86 @@ if(date('D') == "Sat" && date('G') >= 21 && date('G') < 24 || date('D') == "Sun"
     $chuk_array = array_chunk($tab0, (ceil(count($tab0)/11)));
     //print_r($chuk_array);
 
-    $tablevincicasa = "<p>In occasione di questa estrazione qualche fortunato riuscirà a portarsi a casa il ricco premio?
+    $content = "<p>In occasione di questa estrazione qualche fortunato riuscirà a portarsi a casa il ricco premio?
     Ricordiamo come la più alta vincita di tutti i tempi sia stata di 209.106.441,54 € e sia stata ralizzata a Lodi il 13 agosto 2019: riuscirà questa volta il montepremi a scalare la classifica dei premi più ricchi della storia (ricordiamo come il SuperEnalotto detenga il primato della più alta vincita mai aggiudicata a una sola persona in Europa).
     In attesa di scoprirlo a partire dalle 20, pubblicheremo di seguito i numeri vincenti dell’estrazione odierna - che avviene come sempre presso la sede di Piazza Mastai a Roma.</p>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazione Lotto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<p>Di seguito i proponiamo inoltre, sempre aggiornati in diretta, i numeri del lotto.</p>";
-    $tablevincicasa .= "<br>";
+    $content .= "<br>";
+    $content .= "<h2>Estrazione Lotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<p>Di seguito i proponiamo inoltre, sempre aggiornati in diretta, i numeri del lotto.</p>";
+    $content .= "<br>";
 
     //For Del Lotto
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<caption>Del Lotto</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<caption>Del Lotto</caption>";
+    $content .= "<tr>";
     foreach($chuk_array[0] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
         
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[1] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[2] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[3] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[4] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[5] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[6] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[7] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[8] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[9] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[10] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazioni Superenalotto di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "</tr>";
+    $content .= "</table>";
+	$content .= "<br>";
+    $content .= "<h2>Estrazioni Superenalotto di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
     
     
     //SuperEnalotto
@@ -1594,31 +1723,31 @@ if(date('D') == "Sat" && date('G') >= 21 && date('G') < 24 || date('D') == "Sun"
     //print_r($new_array1);
     $new_array2 = array_slice($tab1, 9, 2);
     //print_r($new_array2);
-    $tablevincicasa .= "<table>";
-	$tablevincicasa .= "<caption>Superenalotto</caption>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+	$content .= "<caption>Superenalotto</caption>";
+    $content .= "<tr>";
     foreach($new_array as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array1 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($new_array2 as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-	$tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";
+    $content .= "</tr>";
+	$content .= "</table>";
+	$content .= "<br>";
 
-        $tablevincicasa .= "<h2>Estrazione 10eLotto di oggi " .date("n/d/Y")."</h2>";
-        $tablevincicasa .= "<p>Infine, vi proponiamo anche i numeri del 10eLotto, nella versone collegata all'estrazone del Lotto.</p>";
-        $tablevincicasa .= "<br>";
+        $content .= "<h2>Estrazione 10eLotto di oggi " .date("n/d/Y")."</h2>";
+        $content .= "<p>Infine, vi proponiamo anche i numeri del 10eLotto, nella versone collegata all'estrazone del Lotto.</p>";
+        $content .= "<br>";
 
         //For 10 e Lotto
         unset($tab2[0]);
@@ -1637,83 +1766,104 @@ if(date('D') == "Sat" && date('G') >= 21 && date('G') < 24 || date('D') == "Sun"
         //print_r($new_array4);
         $new_array5 = array_slice($tab2, 26, 3);
         //print_r($new_array5);
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<caption>10 e Lotto</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<caption>10 e Lotto</caption>";
+        $content .= "<tr>";
         foreach($new_array as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
     
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array1 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
     
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array2 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array3 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array4 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($new_array5 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>";
+        $content .= "</tr>";
+        $content .= "</table>";
+        $content .= "<br>";
 
         //10 e Lotto EXTRA
         unset($tab3[0]);
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<caption>10 e Lotto EXTRA</caption>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<caption>10 e Lotto EXTRA</caption>";
+        $content .= "<tr>";
         foreach($tab3 as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-        $tablevincicasa .= "<br>";
-        $tablevincicasa .= "<p>Per chi non conoscesse il funzionamento, ci rifacciamo al regolamento riportato da Wikipedia: 'la combinazione vincente viene determinata dai primi due numeri delle ruote del Lotto, esclusa la ruota Nazionale; in caso di numeri ripetuti si partirà dalla terza colonna iniziando dalla ruota di Bari e proseguendo in ordine alfabetico'.</p>";
-        $leadContent = $tablevincicasa;
+        $content .= "</tr>";
+        $content .= "</table>";
+        $content .= "<br>";
+        $content .= "<p>Per chi non conoscesse il funzionamento, ci rifacciamo al regolamento riportato da Wikipedia: 'la combinazione vincente viene determinata dai primi due numeri delle ruote del Lotto, esclusa la ruota Nazionale; in caso di numeri ripetuti si partirà dalla terza colonna iniziando dalla ruota di Bari e proseguendo in ordine alfabetico'.</p>";
+        $leadContent = $content;
 
-        $new_post = array(
-            'post_title' => $leadTitle,
+        $query = new WP_Query( array( 
+            'numberposts' => 1,
+            'offset' => 0,
+            //'category' => $cat->cat_ID,
+            'orderby' => 'ID',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'tag' => 'Lotto3' ) );
+            //$query->the_post();
+        if($query->have_posts()){
+            while ( $query->have_posts() ) {
+                $query->the_post(); 
+                //$recent['title'] = get_the_title();
+                $recentid = get_the_ID();
+                //wp_reset_postdata();
+            }
+        }
+
+        $data = array(
+            'ID' => $recentid,
+            //'post_title' => $leadTitle,
             'post_content' => $leadContent,
-            'post_status' => $postStatus,
+            //'post_status' => $postStatus,
             //'post_date' => $timeStamp,
-            'post_author' => $userID,
-            'post_type' => $postType,
-            'post_category' => array($categoryID),
-            //'page_template' => 'show.php'
+            //'post_author' => $userID,
+            //'post_type' => $postType,
+            //'post_category' => array($categoryID),
+            //'page_template' => 'show.php',
+            //'tags_input' => array('Lotto, SuperEnalotto, 10eLotto')
         );
-
-        $post_id = wp_insert_post($new_post);
-        set_post_thumbnail($post_id, 101);
+        wp_update_post($data);
+        //$post_id = wp_insert_post($new_post);
+        //set_post_thumbnail($post_id, 101);
     
         if(date('D') == "Sat" && date('G') >= 21 && date('G') < 24 || date('D') == "Sun" && date('G') >= 1 && date('G') < 21){
 
             require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-            $postType = 'post'; // set to post or page
+            //$postType = 'post'; // set to post or page
             //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-            $categoryID = '1'; // set to category id.
-            $userID = 'test'; // set to user id
-            $leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
-            $postStatus = 'publish';  // set to future, draft, or publish
+            //$categoryID = '1'; // set to category id.
+            //$userID = 'test'; // set to user id
+            //$leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
+            //$postStatus = 'publish';  // set to future, draft, or publish
 
             $tab5 = array();
             $tab6 = array();
@@ -1731,117 +1881,138 @@ if(date('D') == "Sat" && date('G') >= 21 && date('G') < 24 || date('D') == "Sun"
             
             $tab8 = $rowData[8];
 
-            $tablevincicasa .= "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
+            $content .= "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
             Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.
             Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
-            $tablevincicasa .= "<br>";
-            $tablevincicasa .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
-            $tablevincicasa .= "<br>";
+            $content .= "<br>";
+            $content .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
+            $content .= "<br>";
 
             //Table A of VinciCasa
             $chuk_array5 = array_chunk($tab6, (ceil(count($tab6)/5)));
             //print_r($chuk_array5);
             unset($tab5[0]);
-            $tablevincicasa .= "<table>";
-            $tablevincicasa .= "<caption>VinciCasa</caption>";
-            $tablevincicasa .= "<tr>";
+            $content .= "<table>";
+            $content .= "<caption>VinciCasa</caption>";
+            $content .= "<tr>";
             foreach ($tab5 as $row) {
-                $tablevincicasa .= "<td>$row </td>";
+                $content .= "<td>$row </td>";
             }
-            $tablevincicasa .= "</tr>";
-            $tablevincicasa .= "</table>";
-            $tablevincicasa .= "<br>";    
+            $content .= "</tr>";
+            $content .= "</table>";
+            $content .= "<br>";    
 
             //Table B
-            $tablevincicasa .= "<table>";
-            $tablevincicasa .= "<tr>";
+            $content .= "<table>";
+            $content .= "<tr>";
             foreach($chuk_array5[0] as $bits){
-                $tablevincicasa .= "<td>$bits</td>";
+                $content .= "<td>$bits</td>";
             }
-            $tablevincicasa .= "</tr>";
+            $content .= "</tr>";
                 
-            $tablevincicasa .= "<tr>";
+            $content .= "<tr>";
             foreach($chuk_array5[1] as $bits){
-                $tablevincicasa .= "<td>$bits</td>";
+                $content .= "<td>$bits</td>";
             }
-            $tablevincicasa .= "</tr>";
+            $content .= "</tr>";
 
-            $tablevincicasa .= "<tr>";
+            $content .= "<tr>";
             foreach($chuk_array5[2] as $bits){
-                $tablevincicasa .= "<td>$bits</td>";
+                $content .= "<td>$bits</td>";
             }
-            $tablevincicasa .= "</tr>";
+            $content .= "</tr>";
 
-            $tablevincicasa .= "<tr>";
+            $content .= "<tr>";
             foreach($chuk_array5[3] as $bits){
-                $tablevincicasa .= "<td>$bits</td>";
+                $content .= "<td>$bits</td>";
             }
-            $tablevincicasa .= "</tr>";
+            $content .= "</tr>";
 
-            $tablevincicasa .= "<tr>";
+            $content .= "<tr>";
             foreach($chuk_array5[4] as $bits){
-                $tablevincicasa .= "<td>$bits</td>";
+                $content .= "<td>$bits</td>";
             }
-            $tablevincicasa .= "</tr>";
-            $tablevincicasa .= "</table>";
-            $tablevincicasa .= "<br>";
-            $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
+            $content .= "</tr>";
+            $content .= "</table>";
+            $content .= "<br>";
+            $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
             Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
-            $tablevincicasa .= "<br>";
-            $tablevincicasa .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
-            $tablevincicasa .= "<br>";
+            $content .= "<br>";
+            $content .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
+            $content .= "<br>";
 
             //Table for MillionDay
-            $tablevincicasa .= "<table>";
-            $tablevincicasa .= "<caption>MillionDay</caption>";
-            $tablevincicasa .= "<tr>";
+            $content .= "<table>";
+            $content .= "<caption>MillionDay</caption>";
+            $content .= "<tr>";
             foreach ($tab7 as $row) {
                 foreach (array($row) as $column) {
-                    $tablevincicasa .= "<td>$column </td>";
+                    $content .= "<td>$column </td>";
                 }
             }   
-            $tablevincicasa .= "</tr>"; 
-            $tablevincicasa .= "</table>";
-            $tablevincicasa .= "<br>"; 
+            $content .= "</tr>"; 
+            $content .= "</table>";
+            $content .= "<br>"; 
 
 
             //Table for MillionDay EXTRA
-            $tablevincicasa .= "<table>";
-            $tablevincicasa .= "<caption>MillionDay EXTRA</caption>";
-            $tablevincicasa .= "<tr>";
+            $content .= "<table>";
+            $content .= "<caption>MillionDay EXTRA</caption>";
+            $content .= "<tr>";
             foreach ($tab8 as $row) {
                 foreach (array($row) as $column) {
-                    $tablevincicasa .= "<td>$column </td>";
+                    $content .= "<td>$column </td>";
                 }
             }   
-            $tablevincicasa .= "</tr>"; 
-            $tablevincicasa .= "</table>";
-            $tablevincicasa .= "<br>";
-            $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
+            $content .= "</tr>"; 
+            $content .= "</table>";
+            $content .= "<br>";
+            $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
             Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.
             Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.
             A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
-            $tablevincicasa .= "<br>";
-            $tablevincicasa .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
-            $tablevincicasa .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
+            $content .= "<br>";
+            $content .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
+            $content .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
             Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.
             Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).
             Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.</p>";
-            $leadContent = $tablevincicasa;
+            $leadContent = $content;
 
-            $new_post = array(
-                'post_title' => $leadTitle,
+            $query = new WP_Query( array( 
+                'numberposts' => 1,
+                'offset' => 0,
+                //'category' => $cat->cat_ID,
+                'orderby' => 'ID',
+                'order' => 'DESC',
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'tag' => 'VinciCasa5' ) );
+                //$query->the_post();
+            if($query->have_posts()){
+                while ( $query->have_posts() ) {
+                    $query->the_post(); 
+                    //$recent['title'] = get_the_title();
+                    $recentid = get_the_ID();
+                    //wp_reset_postdata();
+                }
+            }
+
+            $data = array(
+                'ID' => $recentid,
+                //'post_title' => $leadTitle,
                 'post_content' => $leadContent,
-                'post_status' => $postStatus,
+                //'post_status' => $postStatus,
                 //'post_date' => $timeStamp,
-                'post_author' => $userID,
-                'post_type' => $postType,
-                'post_category' => array($categoryID),
-                //'page_template' => 'show.php'
+                //'post_author' => $userID,
+                //'post_type' => $postType,
+                //'post_category' => array($categoryID),
+                //'page_template' => 'show.php',
+                //'tags_input' => array('VinciCasa, MillionDay')
             );
-
-            $post_id = wp_insert_post($new_post);
-            set_post_thumbnail($post_id, 101);
+            wp_update_post($data);
+            //$post_id = wp_insert_post($new_post);
+            //set_post_thumbnail($post_id, 101);
         }   
 }
 
@@ -1850,12 +2021,12 @@ if(date('D') == "Sat" && date('G') >= 21 && date('G') < 24 || date('D') == "Sun"
 //For Sunday
 if(date('D') == "Sun" && date('G') >= 21 && date('G') < 24 || date('D') == "Mon" && date('G') >= 1 && date('G') < 21){
     require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-    $postType = 'post'; // set to post or page
+    //$postType = 'post'; // set to post or page
     //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-    $categoryID = '1'; // set to category id.
-    $userID = 'test'; // set to user id
-    $leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
-    $postStatus = 'publish';  // set to future, draft, or publish
+    //$categoryID = '1'; // set to category id.
+    //$userID = 'test'; // set to user id
+    //$leadTitle = "Estrazioni VinciCasa e MillionDay di oggi " .date("n/d/Y");
+    //$postStatus = 'publish';  // set to future, draft, or publish
     
 
 
@@ -1878,117 +2049,145 @@ if(date('D') == "Sun" && date('G') >= 21 && date('G') < 24 || date('D') == "Mon"
     //print_r($tab3);
     $chuk_array = array_chunk($tab1[0], (ceil(count($tab1[0])/5)));
 
-    $tablevincicasa = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
+    $content = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.
     Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.
     Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
-    $tablevincicasa .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>";
+    $content .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>";
 
 
 	//Table A of VinciCasa
-    $tablevincicasa .= "<table>";
-	$tablevincicasa .= "<caption><b>VinciCasa</b></caption>";
+    $content .= "<table>";
+	$content .= "<caption><b>VinciCasa</b></caption>";
     foreach ($tab0 as $row) {
-        $tablevincicasa .= "<tr>";
-        foreach ($row as $column) {
-            $tablevincicasa .= "<td>$column </td>";
+        $content .= "<tr>";
+        foreach($row as $column){
+            if(strlen($column) !== 25){
+                $content .= "<td>$column </td>";
+            }
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
     }
-	$tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";    
+	$content .= "</table>";
+	$content .= "<br>";    
 
 	//Table B
-    $tablevincicasa .= "<table>";
-    $tablevincicasa .= "<tr>";
+    $content .= "<table>";
+    $content .= "<tr>";
     foreach($chuk_array[0] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
         
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[1] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[2] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[3] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
+    $content .= "</tr>";
 
-    $tablevincicasa .= "<tr>";
+    $content .= "<tr>";
     foreach($chuk_array[4] as $bits){
-        $tablevincicasa .= "<td>$bits</td>";
+        $content .= "<td>$bits</td>";
     }
-    $tablevincicasa .= "</tr>";
-    $tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>"; 
-    $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
+    $content .= "</tr>";
+    $content .= "</table>";
+	$content .= "<br>"; 
+    $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.
     Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
-    $tablevincicasa .= "<br>";
-    $tablevincicasa .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
-    $tablevincicasa .= "<br>"; 
+    $content .= "<br>";
+    $content .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>";
+    $content .= "<br>"; 
 
 	//Table for MillionDay
-	$tablevincicasa .= "<table>";
-	$tablevincicasa .= "<caption><b>MillionDay</b></caption>";
+	$content .= "<table>";
+	$content .= "<caption><b>MillionDay</b></caption>";
+    $content .= "<tr>";
 	foreach ($tab2 as $row) {
-        $tablevincicasa .= "<tr>";
         foreach ($row as $column) {
-            $tablevincicasa .= "<td>$column </td>";
+            if(strlen($column) !== 25){
+                $content .= "<td>$column </td>";
+            }
         }
-        $tablevincicasa .= "</tr>";
-    }    
-    $tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>";
+    }
+    $content .= "</tr>";    
+    $content .= "</table>";
+	$content .= "<br>";
 
     
 	//Table for MillionDay EXTRA
-	$tablevincicasa .= "<table>";
-	$tablevincicasa .= "<caption><b>MillionDay EXTRA</b></caption>";
+	$content .= "<table>";
+	$content .= "<caption><b>MillionDay EXTRA</b></caption>";
+    $content .= "<tr>";
 	foreach ($tab3 as $row) {
-		//$tablevincicasa .= "<tr>";
-		foreach ($row as $column) {
-			$tablevincicasa .= "<td>$column </td>";
-		}
-		//$tablevincicasa .= "</tr>";
-	}    
-	$tablevincicasa .= "</table>";
-	$tablevincicasa .= "<br>"; 
+        foreach ($row as $column) {
+            if(strlen($column) !== 25){
+                $content .= "<td>$column </td>";
+            }
+        }
+	}   
+    $content .= "</tr>"; 
+	$content .= "</table>";
+	$content .= "<br>"; 
     
-    $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
+    $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.
     Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.
     Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.
     A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
-    $tablevincicasa .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
-    $tablevincicasa .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
+    $content .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
+    $content .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.
     Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.
     Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).
     Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.</p>";
 
-    $leadContent = $tablevincicasa;
+    $leadContent = $content;
 
-    $new_post = array(
-        'post_title' => $leadTitle,
+    $query = new WP_Query( array( 
+        'numberposts' => 1,
+        'offset' => 0,
+        //'category' => $cat->cat_ID,
+        'orderby' => 'ID',
+        'order' => 'DESC',
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'tag' => 'VinciCasa' ) );
+        //$query->the_post();
+    if($query->have_posts()){
+        while ( $query->have_posts() ) {
+            $query->the_post(); 
+            //$recent['title'] = get_the_title();
+            $recentid = get_the_ID();
+            //wp_reset_postdata();
+        }
+    }
+
+    $data = array(
+        'ID' => $recentid,
+        //'post_title' => $leadTitle,
         'post_content' => $leadContent,
-        'post_status' => $postStatus,
+        //'post_status' => $postStatus,
         //'post_date' => $timeStamp,
-        'post_author' => $userID,
-        'post_type' => $postType,
-        'post_category' => array($categoryID),
-        //'page_template' => 'show.php'
+        //'post_author' => $userID,
+        //'post_type' => $postType,
+        //'post_category' => array($categoryID),
+        //'page_template' => 'show.php',
+        //'tags_input' => array('VinciCasa, MillionDay')
     );
-
-    $post_id = wp_insert_post($new_post);
-    set_post_thumbnail($post_id, 101);
+     
+    wp_update_post($data); 
+    //$post_id = wp_insert_post($data);
+    //set_post_thumbnail($post_id, 101);
 }
 
    
@@ -1996,28 +2195,12 @@ if(date('D') == "Sun" && date('G') >= 21 && date('G') < 24 || date('D') == "Mon"
     //For Monday
     if(date('D') == "Mon" && date('G') >= 21 && date('G') < 24 || date('D') == "Tue" && date('G') >= 1 && date('G') < 21){
         require_once("C:/xampp/htdocs/wordPressSite/wp-load.php");
-        $postType = 'post'; // set to post or page
+        //$postType = 'post'; // set to post or page
         //require_once("C:/xampp/htdocs/wordPressSite/wp-content/themes/twentytwentytwo/show.php");
-        $categoryID = '1'; // set to category id.
-        $userID = 'test'; // set to user id
-        $leadTitle = "Estrazioni VinciCasa e MillionDay " .date("n/d/Y");
-        $postStatus = 'publish';  // set to future, draft, or publish
-        //$leadContent = "<p>Bellow is the Lottery Data for VinciCasa and MillionDay along with other Data</p>
-        //LOTTERY RESULT";
-        //$tablevincicasa .= $leadContent;
-        //Here is the number for LOTTERY<br>*/
-        
-        //str_replace("LOTTERY",$tab0,$leadContent);
-    
-        //$finalText = "";
-        //if($post_id){
-            //$finalText .= "I made a new Post!";
-        //}else{
-            //$finalText .= "Post Failed!";
-        //}
-        //$tablevincicasa .= $finalText;
-
-
+        //$categoryID = '1'; // set to category id.
+        //$userID = 'test'; // set to user id
+        //$leadTitle = "Estrazioni VinciCasa e MillionDay " .date("n/d/Y");
+        //$postStatus = 'publish';  // set to future, draft, or publish
 
 
         $tab0 = array();
@@ -2045,124 +2228,148 @@ if(date('D') == "Sun" && date('G') >= 21 && date('G') < 24 || date('D') == "Mon"
         //print_r($chuk_array);
 
         //Text for VinciCasa
-        $tablevincicasa = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.</p>";
-        $tablevincicasa .= "<p>Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.</p>";
-        $tablevincicasa .= "<p>Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
-        $tablevincicasa .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
-        $tablevincicasa .= "<br>";
-        $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.</p>";
-        $tablevincicasa .= "<br>";
+        $content = "<p>A differenza di Lotto e Superenalotto, ci sono due <b>estrazioni che avvengono tutti i giorni e che possono portare alla vincita di un premio massimo di 500.000 euro e di un milione: parliamo rispettivamente di VinciCasa e MillionDay</b>, giochi a premi lanciati nel 2014 e nel 2018.</p>";
+        $content .= "<p>Nel primo caso si tratta di un gioco della SISAL, nel secondo di IGT Italia.</p>";
+        $content .= "<p>Di seguito vi proponiamo i numeri vincenti di entrambe le lotterie.</p>";
+        $content .= "<h2>Estrazioni VinciCasa di oggi " .date("n/d/Y")."</h2>";
+        $content .= "<br>";
+        $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di VinciCasa.</p>";
+        $content .= "<br>";
 
 
         //Table A of VinciCasa
-        $tablevincicasa .= "<table>";
-	    $tablevincicasa .= "<caption><b>VinciCasa</b></caption>";
+        $content .= "<table>";
+	    $content .= "<caption><b>VinciCasa</b></caption>";
         foreach ($tab1 as $row) {
-            $tablevincicasa .= "<tr>";
+            $content .= "<tr>";
             foreach ($row as $column) {
-                $tablevincicasa .= "<td>$column </td>";
+                if(strlen($column)!==25) {
+                    $content .= "<td>$column </td>"; 
+                }
             }
-            $tablevincicasa .= "</tr>";
+            $content .= "</tr>";
         }
-	    $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>";    
+	    $content .= "</table>";
+	    $content .= "<br>";    
 
 	    //Table B
-        $tablevincicasa .= "<table>";
-        $tablevincicasa .= "<tr>";
+        $content .= "<table>";
+        $content .= "<tr>";
         foreach($chuk_array[0] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
         
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array[1] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array[2] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array[3] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
+        $content .= "</tr>";
 
-        $tablevincicasa .= "<tr>";
+        $content .= "<tr>";
         foreach($chuk_array[4] as $bits){
-            $tablevincicasa .= "<td>$bits</td>";
+            $content .= "<td>$bits</td>";
         }
-        $tablevincicasa .= "</tr>";
-        $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>"; 
+        $content .= "</tr>";
+        $content .= "</table>";
+	    $content .= "<br>"; 
 
-        $tablevincicasa .= "<p>Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
-        $tablevincicasa .= "<br>";
-        $tablevincicasa .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>"; //add date here
-        $tablevincicasa .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.</p>";
-        $tablevincicasa .= "<br>";
+        $content .= "<p>Ricordiamo come nel caso di VinciCasa si debbano scegliere 5 numeri su 40 e che nel caso di vincita del premio di prima categoria il montepremi deve essere impiegato per l'acquisto di un'abitazione.</p>";
+        $content .= "<br>";
+        $content .= "<h2>Estrazioni MillionDay di oggi " .date("n/d/Y")."</h2>"; //add date here
+        $content .= "<p>Di seguito i 5 numeri vincenti dell'estrazione odierna di MillionDay.</p>";
+        $content .= "<br>";
     
 	    //Table for MillionDay
-	    $tablevincicasa .= "<table>";
-	    $tablevincicasa .= "<caption><b>MillionDay</b></caption>";
+	    $content .= "<table>";
+	    $content .= "<caption><b>MillionDay</b></caption>";
 	    foreach ($tab3 as $row) {
-            $tablevincicasa .= "<tr>";
+            $content .= "<tr>";
             foreach ($row as $column) {
-                $tablevincicasa .= "<td>$column </td>";
+                if(strlen($column)!==25) {
+                    $content .= "<td>$column </td>"; 
+                }
             }
-            $tablevincicasa .= "</tr>";
+            $content .= "</tr>";
         }    
-        $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>"; 
+        $content .= "</table>";
+	    $content .= "<br>"; 
 
-        $tablevincicasa .= "<p>Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.</p>";
-        $tablevincicasa .= "<p>Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.</p>";
-        $tablevincicasa .= "<p>A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
-        $tablevincicasa .= "<br>";
-        $tablevincicasa .= "<h2>Estrazioni MillionDay EXTRA di oggi " .date("n/d/Y")."</h2>"; //add date here
+        $content .= "<p>Ricordiamo come nel caso di MillionDay si debbano scegliere 5 numeri su 55.</p>";
+        $content .= "<p>Nel caso di vincita del premio di prima categoria si vincerebbe un milione da impiegare come meglio si preferisce.</p>";
+        $content .= "<p>A differenza di VinciCasa, inoltre, la schedina costa un euro (contro i due euro della giocata semplice di VinciCasa).</p>";
+        $content .= "<br>";
+        $content .= "<h2>Estrazioni MillionDay EXTRA di oggi " .date("n/d/Y")."</h2>"; //add date here
 
 
 	    //Table for MillionDay EXTRA
-	    $tablevincicasa .= "<table>";
-	    $tablevincicasa .= "<caption><b>MillionDay EXTRA</b></caption>";
+	    $content .= "<table>";
+	    $content .= "<caption><b>MillionDay EXTRA</b></caption>";
 	    foreach ($tab4 as $row) {
-		    $tablevincicasa .= "<tr>";
+		    $content .= "<tr>";
 		    foreach ($row as $column) {
                 if(strlen($column)!==25) {
-
-                    $tablevincicasa .= "<td>$column </td>"; 
+                    $content .= "<td>$column </td>"; 
                 }
 		    }
-		    $tablevincicasa .= "</tr>";
+		    $content .= "</tr>";
 	    }    
-	    $tablevincicasa .= "</table>";
-	    $tablevincicasa .= "<br>";
+	    $content .= "</table>";
+	    $content .= "<br>";
 
-        $tablevincicasa .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
-        $tablevincicasa .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.</p>";
-        $tablevincicasa .= "<p>Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.</p>";
-        $tablevincicasa .= "<p>Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).</p>";
-        $tablevincicasa .= "<p>Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.</p>";
-        $leadContent = $tablevincicasa;
+        $content .= "<h2>VinciCasa e MillionDay, probabilità di vincita</h2>";
+        $content .= "<p>Ricordiamo come le possibilità di vincita siano decisamente basse.</p>";
+        $content .= "<p>Nel caso di VinciCasa si ha una possibilità su 658.008 di indovinare i 5 numeri.</p>";
+        $content .= "<p>Nel caso di MillionDay la possibilità è ancora più bassa (dovendo indovinare 5 numeri su 55 e non su 40).</p>";
+        $content .= "<p>Per questo motivo vi consigliamo di giocare con moderazione e prendere le estrazioni per quello che sono, cioè un gioco.</p>";
+        $leadContent = $content;
 
-        $new_post = array(
-            'post_title' => $leadTitle,
+        $query = new WP_Query( array( 
+            'numberposts' => 1,
+            'offset' => 0,
+            //'category' => $cat->cat_ID,
+            'orderby' => 'ID',
+            'order' => 'DESC',
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'tag' => 'VinciCasa1' ) );
+            //$query->the_post();
+        if($query->have_posts()){
+            while ( $query->have_posts() ) {
+                $query->the_post(); 
+                //$recent['title'] = get_the_title();
+                $recentid = get_the_ID();
+                //wp_reset_postdata();
+            }
+        }
+
+        $data = array(
+            'ID' => $recentid,
+            //'post_title' => $leadTitle,
             'post_content' => $leadContent,
-            'post_status' => $postStatus,
+            //'post_status' => $postStatus,
             //'post_date' => $timeStamp,
-            'post_author' => $userID,
-            'post_type' => $postType,
-            'post_category' => array($categoryID),
-            //'page_template' => 'show.php'
+            //'post_author' => $userID,
+            //'post_type' => $postType,
+            //'post_category' => array($categoryID),
+            //'page_template' => 'show.php',
+            //'tags_input' => array('VinciCasa, MillionDay')
         );
-    
-        $post_id = wp_insert_post($new_post);
-        set_post_thumbnail($post_id, 101);
+        wp_update_post($data);
+        //$post_id = wp_insert_post($new_post);
+        //set_post_thumbnail($post_id, 101);
     }
 
 
